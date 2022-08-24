@@ -11,6 +11,11 @@
 # production
 /build
 
+# Vim
+*~
+*.swp
+*.swo
+
 # misc
 .DS_Store
 .env.local
