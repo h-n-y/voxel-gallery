@@ -1,0 +1,15 @@
+:root {
+  --page-bg-color: #eee;
+
+  /* TODO: move to the Gallery css module? */
+  --gallery-padding-x: 16px;
+  --gallery-bg-color: #dedede;
+  --gallery-bg-color-transparent: rgba(222, 222, 222, 0.8);
+
+  /* TODO: z-indices
+   *
+   * - select control
+   * - detail page model for mobile
+   */
+
+}
