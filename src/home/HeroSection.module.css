@@ -1,0 +1,26 @@
+.hero-section {
+  height: 100vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 24px;
+  background-color: var(--page-bg-color);
+}
+
+.threejs-container {
+  flex-grow: 2;
+}
+
+.hero-copy {
+  padding: 24px 12px 0;
+}
+
+.hero-copy h1 {
+  margin-bottom: 24px;
+}
+
+.hero-copy p {
+  padding-bottom: 16px;
+}
