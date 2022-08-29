@@ -1,0 +1,98 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*padding: 0 var(--gallery-padding-x);*/
+  background-color: var(--gallery-bg-color);
+}
+
+.select-control-box {
+  margin-bottom: 8px;
+  padding: 0 var(--gallery-padding-x) 8px;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  background-color: var(--gallery-bg-color-transparent);
+  /*background-color: rgba(238, 238, 238, 0.3);*/
+  z-index: 2;
+  /*
+   * TODO: 
+   * - make all box shadows consistent, and create variables
+   * - display (here) only when list has been scrolled
+   */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--gallery-padding-x);
+}
+
+.gallery-list li {
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 360px;
+}
+
+
+/*
+ * For tablet portrait layouts and wider
+ */
+@media (min-width: 600px) {
+
+  .gallery-list {
+    max-width: 800px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .gallery-list li {
+    width: 45%;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .gallery {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  /* Return to the one-column layout */
+  /* TODO: explain more about master-detail layout */
+  .gallery-list {
+    flex-direction: column;
+    flex-wrap: none;
+    justify-content: flex-start;
+  }
+
+  .gallery-list li {
+    width: 100%;
+  }
+}
+
+
+/*
+ * For desktop layouts and wider
+ */
+@media (min-width: 1200px) {
+  /*
+  .gallery-list {
+    max-width: 1200px;
+  }
+
+  .gallery-list li {
+    width: 30%;
+    margin-bottom: 32px;
+  }
+  */
+}
+
