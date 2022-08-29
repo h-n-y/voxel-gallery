@@ -1,0 +1,38 @@
+.master-detail-layout {
+  position: relative;
+}
+
+.detail-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  pointer-events: all;
+}
+
+
+/*
+ * Styles for tablet landscape and wider viewports.
+ */
+@media (min-width: 900px) {
+  .master-detail-layout {
+    display: flex;
+  }
+
+  .master-box {
+    width: 30%;
+    max-width: 280px;
+    /*border-right: 1px solid lightgray;*/
+  }
+
+  .detail-box {
+    position: static;
+    flex-grow: 2;
+
+    /* TODO: check if there are better values for these: */
+    width: initial;
+    height: initial;
+  }
+}
