@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+h1,
+h2,
+p,
+select,
+option,
+button,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Georgia, serif;
+}
+
+body {
+  /*padding: 0 16px;*/
+  font-family: Tahoma, sans-serif;
+}
+
+ol,
+ul {
+  list-style: none;
+}
