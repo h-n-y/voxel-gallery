@@ -1,0 +1,9 @@
+.gallery-layout {
+}
+
+
+@media (min-width: 900px) {
+  .compact-hero-section-box {
+    display: none;
+  }
+}
