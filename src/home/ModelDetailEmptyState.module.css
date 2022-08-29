@@ -1,0 +1,27 @@
+.model-detail-empty-state {
+  display: none;
+
+  flex-grow: 2;
+  background-color: #eee;
+  background-color: var(--page-bg-color);
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+.model-detail-empty-state h1 {
+  margin-bottom: 16px;
+}
+
+.model-detail-empty-state p {
+  margin: 8px;
+}
+
+@media (min-width: 900px) {
+  .model-detail-empty-state {
+    display: flex;
+  }
+}
