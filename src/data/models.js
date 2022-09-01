@@ -10,6 +10,10 @@ const modelData = [
     assetName: "camera-bag",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "rgb(219, 207, 151)",
+      bottom: "rgb(115, 106, 62)"
+    },
   },
   {
     id: "leather-bag",
@@ -17,6 +21,10 @@ const modelData = [
     assetName: "leather-bag",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "white",
+      bottom: "rgb(212, 212, 212)"
+    },
   },
   {
     id: "leather-satchel",
@@ -24,6 +32,10 @@ const modelData = [
     assetName: "leather-satchel",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "rgb(249, 249, 249)",
+      bottom: "rgb(90, 33, 26)"
+    },
   },
   {
     id: "propeller-hat",
@@ -31,6 +43,10 @@ const modelData = [
     assetName: "propeller-hat",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "rgb(54, 54, 54)",
+      bottom: "rgb(33, 33, 33)"
+    },
   },
   {
     id: "scarf",
@@ -38,6 +54,10 @@ const modelData = [
     assetName: "scarf",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "rgb(244, 227, 208)",
+      bottom: "rgb(218, 202, 186)"
+    },
   },
   {
     id: "scifi-glasses",
@@ -45,6 +65,10 @@ const modelData = [
     assetName: "scifi-glasses",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "rgb(248, 172, 80)",
+      bottom: "rgb(100, 27, 75)"
+    },
   },
   {
     id: "sunglasses",
@@ -52,6 +76,10 @@ const modelData = [
     assetName: "sunglasses",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "rgb(79, 255, 185)",
+      bottom: "rgb(40, 57, 124)"
+    },
   },
   {
     id: "visor",
@@ -59,6 +87,10 @@ const modelData = [
     assetName: "visor",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "white",
+      bottom: "rgb(255, 142, 76)"
+    },
   },
   {
     id: "watch",
@@ -66,6 +98,10 @@ const modelData = [
     assetName: "watch",
     category: "Accessories",
     description: "",
+    sceneBgColor: {
+      top: "rgb(106, 106, 106)",
+      bottom: "rgb(46, 46, 46)"
+    },
   },
 
   /*
@@ -78,6 +114,10 @@ const modelData = [
     assetName: "crocodile",
     category: "Animals",
     description: "",
+    sceneBgColor: {
+      top: "rgb(214, 206, 191)",
+      bottom: "rgb(68, 53, 49)"
+    },
   },
   {
     id: "monarch-butterfly",
@@ -85,6 +125,10 @@ const modelData = [
     assetName: "monarch-butterfly",
     category: "Animals",
     description: "",
+    sceneBgColor: {
+      top: "rgb(192, 176, 121)",
+      bottom: "rgb(43, 43, 43)"
+    },
   },
   {
     id: "panda",
@@ -92,6 +136,10 @@ const modelData = [
     assetName: "panda",
     category: "Animals",
     description: "",
+    sceneBgColor: {
+      top: "rgb(220, 208, 189)",
+      bottom: "rgb(124, 108, 96)"
+    },
   },
   {
     id: "wasp",
@@ -99,6 +147,10 @@ const modelData = [
     assetName: "wasp",
     category: "Animals",
     description: "",
+    sceneBgColor: {
+      top: "rgb(95, 77, 42)",
+      bottom: "rgb(67, 49, 26)"
+    },
   },
 
   // TODO: Minify the images for the models below.
@@ -115,6 +167,10 @@ const modelData = [
     assetName: "angler",
     category: "Fish",
     description: "",
+    sceneBgColor: {
+      top: "rgb(76, 143, 153)",
+      bottom: "rgb(39, 13, 11)"
+    },
   },
   {
     id: "clownfish",
@@ -122,6 +178,10 @@ const modelData = [
     assetName: "clownfish",
     category: "Fish",
     description: "",
+    sceneBgColor: {
+      top: "rgb(95, 151, 221)",
+      bottom: "rgb(17, 27, 40)"
+    },
   },
   {
     id: "moorish-idol",
@@ -129,6 +189,10 @@ const modelData = [
     assetName: "moorish-idol",
     category: "Fish",
     description: "",
+    sceneBgColor: {
+      top: "rgb(247, 239, 142)",
+      bottom: "rgb(105, 23, 124)"
+    },
   },
   {
     id: "royal-blue-tang",
@@ -136,6 +200,10 @@ const modelData = [
     assetName: "royal-blue-tang",
     category: "Fish",
     description: "",
+    sceneBgColor: {
+      top: "rgb(57, 55, 92)",
+      bottom: "rgb(29, 28, 47)",
+    },
   },
 
   /*
@@ -148,6 +216,10 @@ const modelData = [
     assetName: "kerzaz-oasis",
     category: "Landscapes",
     description: "",
+    sceneBgColor: {
+      top: "rgb(251, 222, 129)",
+      bottom: "rgb(78, 48, 34)"
+    },
   },
 
   /*
@@ -160,6 +232,10 @@ const modelData = [
     assetName: "chef",
     category: "People",
     description: "",
+    sceneBgColor: {
+      top: "rgb(211, 216, 229)",
+      bottom: "rgb(26, 27, 30)"
+    },
   },
   {
     id: "magician",
@@ -167,6 +243,10 @@ const modelData = [
     assetName: "magician",
     category: "People",
     description: "",
+    sceneBgColor: {
+      top: "white",
+      bottom: "rgb(200, 200, 200)"
+    },
   },
 ]
 
