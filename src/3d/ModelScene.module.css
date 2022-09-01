@@ -1,0 +1,36 @@
+.scene-container {
+  --z-index-bg-layer-bottom: 1;
+  --z-index-bg-layer-top: 2;
+  --z-index-scene: 3;
+}
+
+.scene-container,
+.scene {
+  width: 100%;
+  height: 100%;
+}
+
+.scene {
+  position: relative;
+
+  /* TODO: add bg gradient here? */
+}
+
+.bg-layer-top,
+.bg-layer-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* TODO: z-indices */
+.bg-layer-bottom {
+  background-color: blue;
+}
+
+.bg-layer-top {
+  background-color: yellow;
+  transition: opacity 0.75s;
+}
