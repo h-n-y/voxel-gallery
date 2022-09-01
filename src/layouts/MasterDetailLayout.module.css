@@ -22,6 +22,7 @@
   }
 
   .master-box {
+    flex-shrink: 0;
     width: 30%;
     max-width: 280px;
     /*border-right: 1px solid lightgray;*/
