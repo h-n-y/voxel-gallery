@@ -1,4 +1,7 @@
 :root {
+  --serif-font: Georgia, serif;
+  --sans-serif-font: Tahoma, sans-serif;
+
   --page-bg-color: #eee;
 
   /* TODO: move to the Gallery css module? */
