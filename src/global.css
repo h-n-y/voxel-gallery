@@ -1,0 +1,9 @@
+body.no-scroll-mobile {
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  body.no-scroll-mobile {
+    overflow: visible;
+  }
+}
