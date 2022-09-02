@@ -1,15 +1,19 @@
 import PT from 'prop-types';
+import DismissButton from '../common/DismissButton';
+import styles from './ModelDetail404.module.css';
 
 function ModelDetail404({ modelId }) {
   return (
-    <div>
+    <section className={styles['model-detail-404']}>
+      <h1> 404 </h1>
       <p>
-        Model with name "{modelId}" does not exist. 
+        Model with id "{modelId}" does not exist. 
       </p>   
-      <p>
-      TODO: link to home
-      </p>
-    </div>
+
+      <div className={styles['dismiss-btn-box']}>
+        <DismissButton />
+      </div>
+    </section>
   );
 }
 
