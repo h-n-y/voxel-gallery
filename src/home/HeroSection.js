@@ -3,7 +3,9 @@ import { fetchHeroModel } from '../api/api-utils';
 import ModelScene from '../3d/ModelScene';
 import styles from './HeroSection.module.css';
 
-function HeroSection() {
+const defaultCTA = 'Scroll down to see them all.';
+
+function HeroSection({ cta }) {
   const magicavoxelUrl = "https://ephtracy.github.io/"
   const magicavoxelLink = <a href={magicavoxelUrl} target="_blank">MagicaVoxel</a>
   const heroModel = fetchHeroModel();
@@ -20,10 +22,10 @@ function HeroSection() {
       <section className={styles["hero-copy"]}>
           <h1> Voxel Model Gallery </h1>
           <p>
-            Welcome to my gallery of models I created with {magicavoxelLink}.
+            Welcome to my gallery of interactive models I created with {magicavoxelLink}.
           </p>
           <p>
-            Scroll down to see them all.
+            {cta}
           </p>
         {/*
           <p>
@@ -34,5 +36,13 @@ function HeroSection() {
     </div>
   );
 }
+
+HeroSection.defaultProps = {
+  cta: defaultCTA,
+};
+
+HeroSection.propTypes = {
+  cta: PT.string.isRequired
+};
 
 export default HeroSection;
