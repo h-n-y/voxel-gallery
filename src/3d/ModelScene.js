@@ -25,6 +25,7 @@ class ModelScene extends React.Component {
     this.renderer = ThreeUtil.createRenderer();
     // TODO: only create if rendering on demand
     this.controls = ThreeUtil.createOrbitControls(this.camera, this.renderer.domElement);
+    this.controls.enabled = props.interactionEnabled;
     this.directionalLight = ThreeUtil.createDirectionalLight();
     this.hemisphereLight = ThreeUtil.createHemisphereLight();
     //this.gltfAsset = null;
@@ -259,7 +260,7 @@ class ModelScene extends React.Component {
 }
 
 ModelScene.defaultProps = {
-  renderOnDemand: false
+  interactionEnabled: true
 };
 
 ModelScene.propTypes = {
@@ -267,11 +268,10 @@ ModelScene.propTypes = {
   // - will need to know additional info like bg gradient
 
   //gltfAssetPath: PT.string.isRequired,
-  //
-  // TODO: remove if not needed
-  renderOnDemand: PT.bool.isRequired,
 
   // TODO: add model props OR modelAssetName
+
+  interactionEnabled: PT.bool.isRequired,
 };
 
 export default ModelScene;
