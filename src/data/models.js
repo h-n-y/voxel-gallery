@@ -1,3 +1,4 @@
+
 const modelData = [
 
   /*
@@ -249,7 +250,16 @@ const modelData = [
     },
   },
 ]
-
 modelData.sort((a, b) => a.name < b.name ? -1 : 1)
 
 export default modelData;
+
+export const heroModel = {
+  id: 'stiletto-heels',
+  name: 'Stiletto Heels',
+  assetName: 'stiletto-heels',
+  sceneBgColor: {
+    top: '#eee',
+    bottom: '#eee'
+  }
+};

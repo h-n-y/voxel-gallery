@@ -1,4 +1,4 @@
-import voxelModelData from '../data/models';
+import voxelModelData, { heroModel } from '../data/models';
 
 export function fetchVoxelModels() {
   const response = {
@@ -11,4 +11,8 @@ export function fetchVoxelModels() {
 
 export function fetchVoxelModelWithId(modelId) {
   return voxelModelData.find(model => model.id === modelId);
+}
+
+export function fetchHeroModel() {
+  return heroModel;
 }
