@@ -16,3 +16,15 @@
   padding: 4px;
   border-radius: 4px;
 }
+
+@media (max-height: 699px) {
+  .select-control {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .select-control select {
+    margin: 8px;
+    flex-grow: 2;
+  }
+}

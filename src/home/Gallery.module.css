@@ -13,7 +13,6 @@
 .select-control-box {
   margin-bottom: 8px;
   padding: 0 var(--gallery-padding-x) 8px;
-  padding-bottom: 8px;
   display: flex;
   justify-content: center;
   position: sticky;
@@ -31,7 +30,19 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/*
+ * On short viewports, reduce the vertical height
+ * of the select control box to allow more room
+ * to see the scrollable content.
+ */
+@media (max-height: 699px) {
+  .select-control-box {
+    padding-bottom: 0;
+  }
+}
+
 .gallery-list {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
