@@ -1,13 +1,20 @@
+import PT from 'prop-types';
+import { fetchHeroModel } from '../api/api-utils';
+import ModelScene from '../3d/ModelScene';
 import styles from './HeroSection.module.css';
 
 function HeroSection() {
   const magicavoxelUrl = "https://ephtracy.github.io/"
   const magicavoxelLink = <a href={magicavoxelUrl} target="_blank">MagicaVoxel</a>
+  const heroModel = fetchHeroModel();
 
   return (
     <div className={styles["hero-section"]}>
       <div className={styles["threejs-container"]}>
         {/* threejs canvas is inserted here */} 
+        <ModelScene
+          interactionEnabled={false}
+          model={heroModel} />
       </div>
 
       <section className={styles["hero-copy"]}>
