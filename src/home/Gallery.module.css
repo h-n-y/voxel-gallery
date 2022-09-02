@@ -6,6 +6,10 @@
   background-color: var(--gallery-bg-color);
 }
 
+.gallery nav {
+  width: 100%;
+}
+
 .select-control-box {
   margin-bottom: 8px;
   padding: 0 var(--gallery-padding-x) 8px;

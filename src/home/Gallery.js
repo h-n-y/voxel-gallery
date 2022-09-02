@@ -17,6 +17,8 @@ class Gallery extends React.Component {
       models: []
     };
 
+    this.galleryRef = React.createRef();
+
     this.handleSelectCategory = this.handleSelectCategory.bind(this);
   }
 
@@ -29,7 +31,9 @@ class Gallery extends React.Component {
     const galleryItems = this._getGalleryItems();
 
     return (
-      <div className={styles['gallery']}>
+      <div 
+        ref={this.galleryRef}
+        className={styles['gallery']}>
 
         <div className={styles['select-control-box']}>
           <SelectControl
@@ -54,6 +58,29 @@ class Gallery extends React.Component {
     this.setState({
       selectedCategory
     });
+    this.scrollToGalleryTop();
+  }
+
+  scrollToGalleryTop() {
+    const minRegularLayoutWidth = 900;
+    if (window.innerWidth < minRegularLayoutWidth) {
+      this.scrollToGalleryTopForCompactLayout();
+    } else {
+      this.scrollToGalleryTopForRegularLayout();
+    }
+  }
+
+  scrollToGalleryTopForCompactLayout() {
+    if (window.scrollY > window.innerHeight) {
+      window.scrollTo(0, window.innerHeight);
+    }
+  }
+
+  scrollToGalleryTopForRegularLayout() {
+    const galleryNode = this.galleryRef.current;
+    if (galleryNode) {
+      galleryNode.scrollTop = 0;
+    }
   }
 
   _getGalleryItems() {
