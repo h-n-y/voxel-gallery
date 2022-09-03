@@ -1,10 +1,7 @@
 import {
   Scene,
-  Vector3,
   Mesh,
   FrontSide,
-  Color, // TODO: remove if not needed
-  Clock,
   WebGLRenderer,
   OrthographicCamera,
   DirectionalLight,
@@ -16,13 +13,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 export function createScene() {
   const scene = new Scene();
   // TODO: need to set bg color to transparent?
-  // e.g. scene.backgound = new Color('transparent')
-  //scene.background = new Color('skyblue');
   return scene;
-}
-
-export function createClock() {
-  return new Clock();
 }
 
 export function createRenderer() {
@@ -35,7 +26,6 @@ export function createRenderer() {
   return renderer;
 }
 
-// TODO: need a reliable way to specify the camera frustum size
 export function createOrthographicCamera() {
   const defaultZoom = 160;
   const 
@@ -89,20 +79,6 @@ export function createHemisphereLight() {
   return light;
 }
 
-// TODO: delete if not used
-export function getBoundingBoxCenter(boundingBox) {
-  const
-    spanX = boundingBox.max.x - boundingBox.min.x,
-    spanY = boundingBox.max.y - boundingBox.min.y,
-    spanZ = boundingBox.max.z - boundingBox.min.z;
-  const boundingBoxCenter = new Vector3(
-    spanX / 2,
-    spanY / 2,
-    spanZ / 2
-  );
-  return boundingBoxCenter;
-}
-
 export function removeAllMeshesFromScene(scene) {
   for (const obj of scene.children) {
     if (obj instanceof Mesh) {
@@ -115,7 +91,6 @@ export function removeAllMeshesFromScene(scene) {
 
 export async function loadGLTFAsset(assetPath) {
   const loader = new GLTFLoader();
-  // TODO: error handling?
   const asset = await loader.loadAsync(assetPath);
 
   const model = asset.scene.children[0];
@@ -131,6 +106,6 @@ export async function loadGLTFAsset(assetPath) {
       model.material.opacity = Math.min( 1, model.material.opacity + 0.05 );
     }
   };
-  //const model = asset.scene;
+
   return model;
 }

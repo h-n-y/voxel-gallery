@@ -1,10 +1,8 @@
 import PT from 'prop-types';
 import { Routes, Route } from 'react-router-dom';
 import styles from './MasterDetailLayout.module.css';
-import HeroSection from '../home/HeroSection';
 
 function MasterDetailLayout({ master, detail, detailEmptyState, detailUrlPath }) {
-  // TODO: restrict scrolling (for gallery) when detail view is displayed on mobile layouts
   return (
     <div className={styles['master-detail-layout']}>
       <div className={styles['master-box']}>

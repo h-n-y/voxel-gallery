@@ -1,5 +1,4 @@
 import PT from 'prop-types';
-import { useParams } from 'react-router-dom';
 import ModelScene from '../3d/ModelScene';
 import DismissButton from '../common/DismissButton';
 import styles from './ModelDetail.module.css';

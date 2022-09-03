@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 
-//import HomePage from './home/HomePage';
 import MasterDetailLayout from './layouts/MasterDetailLayout';
 // TODO: consider renaming 'GalleryContainer'
 import GalleryLayout from './home/GalleryLayout';
@@ -18,7 +16,6 @@ function App() {
       detailEmptyState={<ModelDetailEmptyState />}
       detailUrlPath={detailUrlPath}
     />
-    //<HomePage />
   );
 }
 

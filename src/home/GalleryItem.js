@@ -14,10 +14,6 @@ function GalleryItem({ model }) {
 
   return (
     <div className={className}>
-    {/*
-      <h2> {model.name} </h2> 
-      <label> {model.category} </label>
-      */}
       <ModelImage assetName={model.assetName} />
     </div>
   );

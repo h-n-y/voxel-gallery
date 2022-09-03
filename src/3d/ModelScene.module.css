@@ -41,12 +41,6 @@
   height: 100%;
 }
 
-/* TODO: z-indices */
-.bg-layer-bottom {
-  background-color: blue;
-}
-
 .bg-layer-top {
-  background-color: yellow;
   transition: opacity 0.75s;
 }

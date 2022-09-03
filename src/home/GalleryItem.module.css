@@ -9,7 +9,6 @@
   border-radius: 8px;
 
   filter: grayscale(100%);
-  /*transition: filter, background-color 0.25s;*/
 }
 
 .gallery-item.is-selected,
@@ -18,8 +17,6 @@
   background-color: white;
   cursor: pointer;
   transition: filter 0.2s, background-color 0.2s;
-
-  /*border: 4px solid #444;*/
 }
 
 .gallery-item.is-selected {

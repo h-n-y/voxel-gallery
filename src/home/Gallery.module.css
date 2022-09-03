@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*padding: 0 var(--gallery-padding-x);*/
   background-color: var(--gallery-bg-color);
 }
 
@@ -20,7 +19,6 @@
   width: 100%;
   backdrop-filter: blur(8px);
   background-color: var(--gallery-bg-color-transparent);
-  /*background-color: rgba(238, 238, 238, 0.3);*/
   z-index: 2;
   /*
    * TODO: 
@@ -93,21 +91,3 @@
     width: 100%;
   }
 }
-
-
-/*
- * For desktop layouts and wider
- */
-@media (min-width: 1200px) {
-  /*
-  .gallery-list {
-    max-width: 1200px;
-  }
-
-  .gallery-list li {
-    width: 30%;
-    margin-bottom: 32px;
-  }
-  */
-}
-

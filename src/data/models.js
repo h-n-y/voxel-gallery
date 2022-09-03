@@ -141,10 +141,6 @@ const modelData = [
     },
   },
 
-  // TODO: Minify the images for the models below.
-  // tnypng.com may have been throttling your usage
-
-
   /*
    * FISH
    */

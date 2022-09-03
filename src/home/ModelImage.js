@@ -1,8 +1,6 @@
 import PT from 'prop-types';
 import styles from './ModelImage.module.css';
 
-const modelImgDirectory = '../assets/img/models';
-
 function ModelImage({ assetName }) {
   return (
     <picture className={styles['model-image']}>
@@ -49,7 +47,6 @@ function smallImagePath(assetName) {
 function smallImagePath2x(assetName) {
   return require(`../assets/img/models/${assetName}-small@2x.png`);
 }
-
 
 
 export default ModelImage;

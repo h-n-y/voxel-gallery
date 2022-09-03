@@ -27,11 +27,6 @@ function HeroSection({ cta }) {
           <p>
             {cta}
           </p>
-        {/*
-          <p>
-          Click or tap a model to see it displayed in 3D.
-          </p>
-          */}
       </section>
     </div>
   );

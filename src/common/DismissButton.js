@@ -7,7 +7,6 @@ function DismissButton({ path }) {
     <Link to={path} className={styles['dismiss-button']}>
       <div className={styles['dismiss-icon']}></div> 
     </Link>
-
   );
 }
 

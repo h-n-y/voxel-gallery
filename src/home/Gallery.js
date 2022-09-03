@@ -107,9 +107,6 @@ class Gallery extends React.Component {
   }
 
   _fetchModelData() {
-    // TODO: fetch voxel model data
-    // TODO: place in a try/catch?
-    // Or just make a note that error-handling would normally be here
     const result = fetchVoxelModels();
 
     // Derive category options from the response
