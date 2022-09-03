@@ -1,4 +1,4 @@
-import PT from 'prop-types';
+import PropType from '../common/prop-types';
 import { useParams } from 'react-router-dom';
 import styles from './GalleryItem.module.css';
 import ModelImage from './ModelImage';
@@ -20,13 +20,7 @@ function GalleryItem({ model }) {
 }
 
 GalleryItem.propTypes = {
-  // TODO: DRY this up if repeated elsewhere.
-  model: PT.exact({
-    name: PT.string,
-    category: PT.string,
-    description: PT.string,
-    assetUrl: PT.strin,
-  }),
+  model: PropType.model.isRequired,
 };
 
 export default GalleryItem;

@@ -17,4 +17,8 @@ function ModelDetail404({ modelId }) {
   );
 }
 
+ModelDetail404.propTypes = {
+  modelId: PT.string.isRequired,
+};
+
 export default ModelDetail404;

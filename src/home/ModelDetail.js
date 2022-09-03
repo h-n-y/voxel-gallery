@@ -1,4 +1,4 @@
-import PT from 'prop-types';
+import PropType from '../common/prop-types';
 import ModelScene from '../3d/ModelScene';
 import DismissButton from '../common/DismissButton';
 import styles from './ModelDetail.module.css';
@@ -27,7 +27,7 @@ function ModelDetail(props) {
 }
 
 ModelDetail.propTypes = {
-  // model
+  model: PropType.model.isRequired,
 };
 
 export default ModelDetail;
