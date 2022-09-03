@@ -1,6 +1,6 @@
 import PT from 'prop-types';
-import { fetchHeroModel } from '../api/api-utils';
-import ModelScene from '../3d/ModelScene';
+import { fetchHeroModel } from '../../api/api-utils';
+import ModelScene from '../detail/ModelScene';
 import styles from './HeroSection.module.css';
 
 const defaultCTA = 'Scroll down to see them all.';

@@ -1,5 +1,5 @@
 import Gallery from './Gallery';
-import HeroSection from './HeroSection';
+import HeroSection from '../common/HeroSection';
 import styles from './GalleryLayout.module.css';
 
 /**

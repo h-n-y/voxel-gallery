@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchVoxelModels } from '../api/api-utils';
+import { fetchVoxelModels } from '../../api/api-utils';
 import SelectControl from '../common/SelectControl';
 import GalleryItem from './GalleryItem';
 import styles from './Gallery.module.css';

@@ -1,5 +1,5 @@
 import PropType from '../common/prop-types';
-import ModelScene from '../3d/ModelScene';
+import ModelScene from './ModelScene';
 import DismissButton from '../common/DismissButton';
 import styles from './ModelDetail.module.css';
 

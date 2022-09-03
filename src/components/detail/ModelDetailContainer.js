@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchVoxelModelWithId } from '../api/api-utils';
+import { fetchVoxelModelWithId } from '../../api/api-utils';
 import ModelDetail from './ModelDetail';
 import ModelDetail404 from './ModelDetail404';
 

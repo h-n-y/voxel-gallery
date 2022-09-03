@@ -1,4 +1,4 @@
-import HeroSection from './HeroSection';
+import HeroSection from '../common/HeroSection';
 
 import styles from './ModelDetailEmptyState.module.css';
 

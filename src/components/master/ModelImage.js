@@ -36,19 +36,19 @@ ModelImage.propTypes = {
  */
 
 function imagePath(assetName) {
-  return require(`../assets/img/models/${assetName}.png`);
+  return require(`../../assets/img/models/${assetName}.png`);
 }
 
 function imagePath2x(assetName) {
-  return require(`../assets/img/models/${assetName}@2x.png`);
+  return require(`../../assets/img/models/${assetName}@2x.png`);
 }
 
 function smallImagePath(assetName) {
-  return require(`../assets/img/models/${assetName}-small.png`);
+  return require(`../../assets/img/models/${assetName}-small.png`);
 }
 
 function smallImagePath2x(assetName) {
-  return require(`../assets/img/models/${assetName}-small@2x.png`);
+  return require(`../../assets/img/models/${assetName}-small@2x.png`);
 }
 
 
