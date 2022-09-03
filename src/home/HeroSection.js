@@ -7,7 +7,7 @@ const defaultCTA = 'Scroll down to see them all.';
 
 function HeroSection({ cta }) {
   const magicavoxelUrl = "https://ephtracy.github.io/"
-  const magicavoxelLink = <a href={magicavoxelUrl} target="_blank">MagicaVoxel</a>
+  const magicavoxelLink = <a href={magicavoxelUrl} target="_blank" rel="noreferrer">MagicaVoxel</a>
   const heroModel = fetchHeroModel();
 
   return (
