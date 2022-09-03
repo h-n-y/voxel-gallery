@@ -1,5 +1,3 @@
-import './App.css';
-
 import MasterDetailLayout from './layouts/MasterDetailLayout';
 // TODO: consider renaming 'GalleryContainer'
 import GalleryLayout from './home/GalleryLayout';
