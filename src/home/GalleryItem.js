@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import styles from './GalleryItem.module.css';
 import ModelImage from './ModelImage';
 
+/**
+ * Displays a thumbnail of a single voxel model.
+ */
 function GalleryItem({ model }) {
   const currentModelId = useParams().modelId;
   const className = styles['gallery-item'] + 

@@ -5,6 +5,11 @@ import styles from './HeroSection.module.css';
 
 const defaultCTA = 'Scroll down to see them all.';
 
+/**
+ * Hero section for the home page.
+ *
+ * Displays an example model and a call to action.
+ */
 function HeroSection({ cta }) {
   const magicavoxelUrl = "https://ephtracy.github.io/"
   const magicavoxelLink = <a href={magicavoxelUrl} target="_blank" rel="noreferrer">MagicaVoxel</a>

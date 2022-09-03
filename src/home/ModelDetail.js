@@ -3,6 +3,9 @@ import ModelScene from '../3d/ModelScene';
 import DismissButton from '../common/DismissButton';
 import styles from './ModelDetail.module.css';
 
+/**
+ * Displays an interactive 3D model and descriptive text.
+ */
 function ModelDetail(props) {
   return (
     <div className={styles['model-detail']}>

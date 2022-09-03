@@ -10,7 +10,14 @@ class ModelScene extends React.Component {
     super(props);
 
     this.state = {
+      // Whether the "top" background scene layer should be displayed or not.
+      // If not, then the bottom background scene layer is displayed.
+      // The two layers fade in and out to create a smooth gradient transition
+      // when switching scene models.
       topBgLayerIsCurrent: true,
+
+      // The background gradient colors of the previously-selected model displayed
+      // in the scene.
       prevSceneBgColor: {
         top: "gray",
         bottom: "gray"
@@ -19,6 +26,7 @@ class ModelScene extends React.Component {
 
     this.sceneContainerRef = React.createRef();
 
+    // three.js objects for rendering
     this.camera = ThreeUtil.createOrthographicCamera();
     this.scene = ThreeUtil.createScene();
     this.renderer = ThreeUtil.createRenderer();
@@ -33,21 +41,14 @@ class ModelScene extends React.Component {
   }
 
   async componentDidMount() {
+    // add canvas to the DOM
     this.sceneContainerRef.current.append(this.renderer.domElement);
+
+    // Prepare scene for rendering
     this.listenForWindowResize();
     this.updateSceneSize();
     await this.addSceneObjects();
     this.addRenderAnimationLoop();
-  }
-
-  async addSceneObjects() {
-    const { assetName } = this.props.model;
-    await this.addModelToScene(`${process.env.PUBLIC_URL}/3d/${assetName}.glb`);
-
-    this.scene.add(this.camera, this.hemisphereLight);
-
-    // Make directional light a child of the camera
-    this.camera.add(this.directionalLight)
   }
 
   async componentDidUpdate(prevProps) {
@@ -65,17 +66,10 @@ class ModelScene extends React.Component {
   }
 
   componentWillUnmount() {
+    // Remove event listeners and tear down scene.
     this.removeRenderAnimationLoop();
     window.removeEventListener('resize', this.onWindowResize);
     ThreeUtil.removeAllMeshesFromScene(this.scene);
-  }
-
-  // TODO: move
-  cssLinearGradientForColor(colors) {
-    return `linear-gradient(to bottom,
-      ${colors.top},
-      ${colors.bottom}
-    )`;
   }
 
   render() {
@@ -108,10 +102,12 @@ class ModelScene extends React.Component {
           className={styles['scene']}
         />
       </div>
-
     );
   }
 
+  /**
+   * Renders a single frame of the scene.
+   */
   renderScene() {
     this.renderer.render(this.scene, this.camera);
   }
@@ -120,10 +116,34 @@ class ModelScene extends React.Component {
     window.addEventListener('resize', this.onWindowResize);
   }
 
+
+  /**
+   * Updates the scene camera and canvas when the viewport resizes.
+   */
   onWindowResize() {
     this.updateSceneSize();
   }
 
+  /**
+   * Adds a camera, lights, and the model to the scene for rendering.
+   */
+  async addSceneObjects() {
+    const { assetName } = this.props.model;
+    await this.addModelToScene(`${process.env.PUBLIC_URL}/3d/${assetName}.glb`);
+
+    this.scene.add(this.camera, this.hemisphereLight);
+
+    // Make directional light a child of the camera
+    this.camera.add(this.directionalLight)
+  }
+
+
+  /**
+   * Updates the scene camera and renderer for the scene container
+   * element's dimensions.
+   *
+   * Typically called when the viewport size changes.
+   */
   updateSceneSize() {
     const sceneContainerElement = this.sceneContainerRef.current;
     if (!sceneContainerElement) {
@@ -132,7 +152,7 @@ class ModelScene extends React.Component {
 
     const { clientWidth, clientHeight } = sceneContainerElement;
 
-
+    // Keep camera frustum in sync with scene container size.
     this.camera.top = clientHeight / 2;
     this.camera.bottom = -(clientHeight / 2);
     this.camera.left = -(clientWidth / 2);
@@ -143,6 +163,11 @@ class ModelScene extends React.Component {
     this.renderer.setPixelRatio(window.devicePixelRatio);
   }
 
+  /**
+   * Adds a model asset to the scene.
+   *
+   * @param {string} The path to a model glTF file.
+   */
   async addModelToScene(assetPath) {
     this.gltfModel = await ThreeUtil.loadGLTFAsset(assetPath);
 
@@ -150,22 +175,46 @@ class ModelScene extends React.Component {
     this.scene.add(this.gltfModel);
   }
 
+  /**
+   * Starts the renderer's animation loop.
+   */
   addRenderAnimationLoop() {
     this.renderer.setAnimationLoop(this.loop);
   }
 
+  /**
+   * Stops the renderer's animation loop.
+   */
   removeRenderAnimationLoop() {
     this.renderer.setAnimationLoop(null);
   }
 
+  /**
+   * Performs a single iteration of the renderer animation loop.
+   */
   loop() {
     this.tick();
     this.renderScene();
   }
 
+  /**
+   * Updates the scene control and model state (presumably) for a single
+   * loop iteration.
+   */
   tick() {
     this.controls.update();
     this.gltfModel.update();
+  }
+
+  /**
+   * @param colors - An object with top and bottom colors for the scene background gradient.
+   * @returns {string} A CSS linear gradient string for `colors`.
+   */
+  cssLinearGradientForColor(colors) {
+    return `linear-gradient(to bottom,
+      ${colors.top},
+      ${colors.bottom}
+    )`;
   }
 }
 
@@ -174,7 +223,9 @@ ModelScene.defaultProps = {
 };
 
 ModelScene.propTypes = {
+  // Controls whether user can interact with the 3D model
   interactionEnabled: PT.bool.isRequired,
+  // The 3D model data
   model: PropType.model.isRequired,
 };
 

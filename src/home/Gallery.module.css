@@ -79,8 +79,9 @@
     overflow-y: scroll;
   }
 
-  /* Return to the one-column layout */
-  /* TODO: explain more about master-detail layout */
+  /* 
+   * Return to the one-column layout.
+   */
   .gallery-list {
     flex-direction: column;
     flex-wrap: none;

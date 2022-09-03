@@ -5,8 +5,12 @@ import SelectControl from '../common/SelectControl';
 import GalleryItem from './GalleryItem';
 import styles from './Gallery.module.css';
 
+// The select control option when displaying *all* models.
 const anyCategory = 'All';
 
+/**
+ * Displays a filterable list of model thumbnails for users to choose from.
+ */
 class Gallery extends React.Component {
 
   constructor(props) {
@@ -34,6 +38,7 @@ class Gallery extends React.Component {
         ref={this.galleryRef}
         className={styles['gallery']}>
 
+        {/* SELECT CONTROL */}
         <div className={styles['select-control-box']}>
           <SelectControl
             id="category-select"
@@ -43,6 +48,7 @@ class Gallery extends React.Component {
             onSelect={this.handleSelectCategory} />
         </div>
 
+       {/* GALLERY LIST */}
         <nav>
           <ul className={styles['gallery-list']}>
             {galleryItems}
@@ -52,6 +58,11 @@ class Gallery extends React.Component {
     );
   }
 
+  /**
+   * Updates the selected model category.
+   *
+   * @param {string} selectedCategory - The model category selected by the user.
+   */
   handleSelectCategory(selectedCategory) {
     this.setState({
       selectedCategory
@@ -59,6 +70,9 @@ class Gallery extends React.Component {
     this.scrollToGalleryTop();
   }
 
+  /**
+   * Scrolls the gallery to the top of the list.
+   */
   scrollToGalleryTop() {
     const minRegularLayoutWidth = 900;
     if (window.innerWidth < minRegularLayoutWidth) {
@@ -68,12 +82,22 @@ class Gallery extends React.Component {
     }
   }
 
+  /**
+   * Scrolls the gallery to the top of the list.
+   *
+   * Meant for horizontally compact layouts only.
+   */
   scrollToGalleryTopForCompactLayout() {
     if (window.scrollY > window.innerHeight) {
       window.scrollTo(0, window.innerHeight);
     }
   }
 
+  /**
+   * Scrolls the gallery to the top of the list.
+   *
+   * Meant for horizontally regular (i.e. desktop-sized) layouts only.
+   */
   scrollToGalleryTopForRegularLayout() {
     const galleryNode = this.galleryRef.current;
     if (galleryNode) {
@@ -81,6 +105,11 @@ class Gallery extends React.Component {
     }
   }
 
+  /**
+   * @returns An array of gallery item elements for the current model category.
+   */
+  getGalleryItems() {
+    const models = this.getModelsForSelectedCategory();
     return (
       models.map(model => 
         <li key={model.name} >
@@ -92,6 +121,10 @@ class Gallery extends React.Component {
     );
   }
 
+  /**
+   * @returns An array of models for the current model category.
+   */
+  getModelsForSelectedCategory() {
     const models = this.state.models;
     const selectedCategory = this.state.selectedCategory;
 
@@ -103,6 +136,11 @@ class Gallery extends React.Component {
     });
   }
 
+  /**
+   * Fetches the voxel model data and sets the category options
+   * from the result.
+   */
+  fetchModelData() {
     const result = fetchVoxelModels();
 
     // Derive category options from the response
@@ -116,6 +154,10 @@ class Gallery extends React.Component {
   }
 }
 
+/**
+ * @param modelData - An array of model data.
+ * @returns An array of the distinct model categories found in `modelData`.
+ */
 function getDistinctCategories(modelData) {
   const distinctCategories = new Set(modelData.map(datum => datum.category));
   return Array.from(distinctCategories).sort();

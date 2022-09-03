@@ -1,6 +1,9 @@
 import PT from 'prop-types';
 import styles from './ModelImage.module.css';
 
+/**
+ * A model thumbnail view.
+ */
 function ModelImage({ assetName }) {
   return (
     <picture className={styles['model-image']}>

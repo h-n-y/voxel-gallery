@@ -1,4 +1,6 @@
-
+/*
+ * Data for all the models the page displays, sorted by category. 
+ */
 const modelData = [
 
   /*
@@ -226,7 +228,12 @@ const modelData = [
     },
   },
 ]
-// TODO: comment
+
+// `modelData` is grouped by category for organizational convenience.
+// However, the categories should be shuffled somewhat when displayed
+// on the page (a subjective opinion). 
+//
+// Sorting by *name* here is simple and shuffles the categories satisfactorily.
 modelData.sort((a, b) => a.name < b.name ? -1 : 1)
 
 export default modelData;

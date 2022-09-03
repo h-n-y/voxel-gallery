@@ -2,6 +2,9 @@ import Gallery from './Gallery';
 import HeroSection from './HeroSection';
 import styles from './GalleryLayout.module.css';
 
+/**
+ * Displays the voxel model gallery list.
+ */
 function GalleryLayout() {
   return (
     <div className={styles['gallery-layout']}>
