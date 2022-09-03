@@ -9,7 +9,6 @@ function ModelDetail(props) {
 
       <ModelScene model={props.model} />
 
-    {/* TODO: extract into a <ModelDescription /> component */}
       <section className={styles['model-detail-copy']}>
         <h2>
           {props.model.name}

@@ -1,5 +1,4 @@
 import MasterDetailLayout from './layouts/MasterDetailLayout';
-// TODO: consider renaming 'GalleryContainer'
 import GalleryLayout from './home/GalleryLayout';
 import ModelDetailContainer from './home/ModelDetailContainer';
 import ModelDetailEmptyState from './home/ModelDetailEmptyState';

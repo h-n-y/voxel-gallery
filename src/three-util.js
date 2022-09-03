@@ -12,7 +12,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export function createScene() {
   const scene = new Scene();
-  // TODO: need to set bg color to transparent?
   return scene;
 }
 

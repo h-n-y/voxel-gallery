@@ -16,7 +16,6 @@ function MasterDetailLayout({ master, detail, detailEmptyState, detailUrlPath })
         </Routes>
       </div> 
 
-    {/* TODO: consider wrapping Routes with the <div class="detail-box" /> */}
       <Routes>
         <Route path={detailUrlPath} element={
           <div className={styles['detail-box']}>
