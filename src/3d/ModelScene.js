@@ -1,5 +1,6 @@
 import React from 'react';
 import PT from 'prop-types';
+import PropType from '../common/prop-types';
 import * as ThreeUtil from '../three-util';
 import styles from './ModelScene.module.css';
 
