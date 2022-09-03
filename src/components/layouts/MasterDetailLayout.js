@@ -18,7 +18,7 @@ function MasterDetailLayout({ master, detail, detailEmptyState, detailUrlPath })
               Why render the `master` element on the child `detailUrlPath`?
 
               It's possible the `master` element will need access to the `detailUrlPath`
-              to update it's state correctly.
+              to update its state correctly.
 
               (For example, the <Gallery> component
               needs access to the path parameter to identify which of its gallery
