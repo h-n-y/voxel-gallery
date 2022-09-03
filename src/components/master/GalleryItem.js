@@ -1,4 +1,4 @@
-import PropType from '../common/prop-types';
+import PropType from '../../data/prop-types';
 import { useParams } from 'react-router-dom';
 import styles from './GalleryItem.module.css';
 import ModelImage from './ModelImage';

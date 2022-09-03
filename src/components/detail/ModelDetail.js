@@ -1,4 +1,4 @@
-import PropType from '../common/prop-types';
+import PropType from '../../data/prop-types';
 import ModelScene from './ModelScene';
 import DismissButton from '../common/DismissButton';
 import styles from './ModelDetail.module.css';
