@@ -114,14 +114,9 @@ export function removeAllMeshesFromScene(scene) {
 }
 
 export async function loadGLTFAsset(assetPath) {
-  console.log("[ThreeUtil] Begin loading asset at", assetPath);
   const loader = new GLTFLoader();
   // TODO: error handling?
   const asset = await loader.loadAsync(assetPath);
-
-  console.log("[ThreeUtil] Asset loaded:");
-  console.log(asset);
-  console.log(asset.scene.children[0]);
 
   const model = asset.scene.children[0];
   model.material.transparent = true;

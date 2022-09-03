@@ -23,7 +23,6 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
-    console.log("[Gallery] componentDidMount");
     this._fetchModelData();
   }
 
@@ -54,7 +53,6 @@ class Gallery extends React.Component {
   }
 
   handleSelectCategory(selectedCategory) {
-    console.log("New category selected: ", selectedCategory);
     this.setState({
       selectedCategory
     });
@@ -117,10 +115,6 @@ class Gallery extends React.Component {
     // Derive category options from the response
     const categories = getDistinctCategories(result.voxelModelData);
     const categoryOptions = [anyCategory].concat(categories); 
-
-    console.log("[Gallery] models:");
-    console.log(result);
-    console.log(categoryOptions);
 
     this.setState({
       models: result.voxelModelData,

@@ -49,7 +49,6 @@ class ModelScene extends React.Component {
   */
 
   async componentDidMount() {
-    console.log("[ModelScene] componentDidMount")
     this.sceneContainerRef.current.append(this.renderer.domElement);
 
     //await this.addModelToScene(this.gltfAssetPath);
@@ -97,8 +96,6 @@ class ModelScene extends React.Component {
     if (this.props.model !== prevProps.model) {
       // wrap in a method
       //if (this.gltfModel) {
-        console.log("[ModelScene] NEW MODEL", this.scene);
-        console.log(this.gltfModel)
         /*
         this.scene.remove(this.gltfModel);
         //this.gltfModel.removeFromParent();
@@ -119,7 +116,6 @@ class ModelScene extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("[ModelScene] componentWillUnmount")
     this.removeRenderAnimationLoop();
     // TODO: Delete if not needed
     this.controls.removeEventListener('change', this.renderScene);
@@ -202,7 +198,6 @@ class ModelScene extends React.Component {
 
     const { clientWidth, clientHeight } = sceneContainerElement;
 
-    console.log(`width: ${clientWidth}px\theight: ${clientHeight}px`);
 
     this.camera.top = clientHeight / 2;
     this.camera.bottom = -(clientHeight / 2);
@@ -233,13 +228,11 @@ class ModelScene extends React.Component {
   }
 
   addRenderAnimationLoop() {
-    console.log("add loop!!!", this.loop)
     // TODO: need to bind this.loop to this?
     this.renderer.setAnimationLoop(this.loop);
   }
 
   removeRenderAnimationLoop() {
-    console.log("remove loop!!!")
     this.renderer.setAnimationLoop(null);
   }
 
