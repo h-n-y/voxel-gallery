@@ -23,11 +23,11 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
-    this._fetchModelData();
+    this.fetchModelData();
   }
 
   render() {
-    const galleryItems = this._getGalleryItems();
+    const galleryItems = this.getGalleryItems();
 
     return (
       <div 
@@ -81,8 +81,6 @@ class Gallery extends React.Component {
     }
   }
 
-  _getGalleryItems() {
-    const models = this._getModelsForSelectedCategory();
     return (
       models.map(model => 
         <li key={model.name} >
@@ -94,7 +92,6 @@ class Gallery extends React.Component {
     );
   }
 
-  _getModelsForSelectedCategory() {
     const models = this.state.models;
     const selectedCategory = this.state.selectedCategory;
 
@@ -106,7 +103,6 @@ class Gallery extends React.Component {
     });
   }
 
-  _fetchModelData() {
     const result = fetchVoxelModels();
 
     // Derive category options from the response
